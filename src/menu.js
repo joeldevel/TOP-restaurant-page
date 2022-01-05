@@ -5,7 +5,7 @@ export default function Menu() {
     element.className = "hidden";
     element.id = "menu";
 
-    element.innerHTML = "Contact us at pepinos@restaurant.com";
-
+    element.innerHTML = "Here some of our delicious antipasti";
+    
     return element;
 }

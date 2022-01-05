@@ -6,7 +6,7 @@ export default function Contact() {
     element.className = "hidden";
     element.id = "contact";
 
-    element.innerHTML = "Here some of our delicious antipasti";
+    element.innerHTML = "Contact us at pepinos@restaurant.com";
 
     return element;
 }

@@ -16,6 +16,27 @@ function content() {
   document.querySelector("#tab-content").appendChild(menu);
   document.querySelector("#tab-content").appendChild(home);
 
+  // grab all tabs content
+  let tabsContent = document.querySelectorAll(".tab-content div");
+  let tabButtons = document.querySelectorAll("nav a");
+  // console.log(tabsContent);
+  for(let i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].onclick = showTabContent;
+  }
+
+  function showTabContent(e) {
+    console.log(this);
+    //get which one to show
+    let contentId = this.title;
+    // hide all
+    for(let i = 0; i < tabsContent.length; i++) {
+        tabsContent[i].className = "hidden";
+        if(tabsContent[i].id == contentId) {
+            tabsContent[i].className = "active-content";
+        }
+    }
+  }
+
 }
 
 content();
