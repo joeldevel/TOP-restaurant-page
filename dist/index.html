@@ -17,33 +17,32 @@
         <a class="tab-button" title="contact">contact</a>
       </nav>
       <h1>Welcome to Pepino's</h1>
-      <div class="tab-content">
-        <div id="home" class="active-content">Pepino's is a traditional italian restaurant</div>
-        <div id="menu" class="hidden">Here some of our delicious antipasti</div>
-        <div id="contact" class="hidden">Contact us at pepinos@restaurant.com</div>
-      </div>
+      <div class="tab-content" id="tab-content"></div>
     </div>
     <script type="text/javascript" src="main.js"></script>
     <script>
-      // grab all tabs content
-      let tabsContent = document.querySelectorAll(".tab-content div");
-      let tabButtons = document.querySelectorAll("nav a");
-      // console.log(tabsContent);
-      for(let i=0; i<tabButtons.length; i++) {
-          tabButtons[i].onclick = showTabContent;
-      }
-
-      function showTabContent(e) {
-          console.log(this);
-          //get which one to show
-          let contentId = this.title;
-          // hide all
-          for(let i=0; i<tabsContent.length; i++) {
-              tabsContent[i].className = "hidden";
-              if(tabsContent[i].id == contentId) {
-                  tabsContent[i].className = "active-content";
-              }
+      window.onload = function() {
+          // grab all tabs content
+          let tabsContent = document.querySelectorAll(".tab-content div");
+          let tabButtons = document.querySelectorAll("nav a");
+          console.log(tabsContent);
+          for(let i = 0; i < tabButtons.length; i++) {
+              tabButtons[i].onclick = showTabContent;
           }
+
+          function showTabContent(e) {
+            // console.log(this);
+            //get which one to show
+            let contentId = this.title;
+            // hide all
+            for(let i = 0; i < tabsContent.length; i++) {
+                tabsContent[i].className = "hidden";
+                if(tabsContent[i].id == contentId) {
+                    tabsContent[i].className = "active-content";
+                }
+            }
+          }
+
       }
     </script>
   </body>
